@@ -1,0 +1,71 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+library(useapi)
+if (dir.exists("example")) {
+  unlink("example", recursive = TRUE)
+}
+if (dir.exists("/tmp/useapitest")) {
+  unlink("/tmp/useapitest", recursive = TRUE)
+}
+#remove.packages("useapitest")
+```
+# useapi
+
+📩📨  A workflow for building API wrapper/client packages in R.
+
+## Installation
+
+You can install from [Github](https://github.com/mkearney/useapi) with:
+
+```{r, eval = FALSE}
+## install from github
+devtools::install_github("mkearney/useapi")
+```
+
+## Example
+
+This is a basic example of how to create a new API client package:
+
+```{r example}
+## create example package
+create_api_package(path = "/tmp/useapitest", 
+  site = "Use API Test",
+  base_url = "https://api.useapitest.com/v1")
+```
+
+See the [example useapitest package here](example).
+
+
+```{r useapitest}
+## load new package
+library(useapitest)
+
+## create request URL
+useapitest:::useapitest_api_call(path = "rstats/apidevtools", 
+  n = 20, include_entities = TRUE)
+```
+
+It's all ready to send and receive HTTP requests<sup>1</sup>:
+
+```{r http, eval = FALSE}
+## send GET request
+r <- useapitest_api_get(path = "rstats/apidevtools", n = 20)
+
+## view data
+useapitest_as_tbl(r)
+```
+
+
+
+<sup>1</sup>  *Note*: The example is a fictional website/application and thus will create an error due to an unresolveable host domain.
