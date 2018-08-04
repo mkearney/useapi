@@ -1,7 +1,9 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# useapi
+# useapi <img src="man/figures/logo.png" width="160px" align="right" />
+
+[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 
 📩📨 A workflow for building API wrapper/client packages in R.
 
@@ -47,18 +49,12 @@ create_api_package(path = "/tmp/useapitest",
 #> Writing useapitest_token.Rd
 #> Writing useapitest_as_tbl.Rd
 #> Installing useapitest
-#> Running /Library/Frameworks/R.framework/Resources/bin/R CMD INSTALL \
-#>   /private/tmp/useapitest \
-#>   '--library=/Library/Frameworks/R.framework/Versions/3.5/Resources/library' \
-#>   --install-tests 
-#> * installing *source* package ‘useapitest’ ...
-#> ** R
-#> ** byte-compile and prepare package for lazy loading
-#> ** help
-#> *** installing help indices
-#> ** building package indices
-#> ** testing if installed package can be loaded
-#> * DONE (useapitest)
+#> '/Library/Frameworks/R.framework/Resources/bin/R' --no-site-file  \
+#>   --no-environ --no-save --no-restore --quiet CMD INSTALL  \
+#>   '/private/tmp/useapitest'  \
+#>   --library='/Library/Frameworks/R.framework/Versions/3.5/Resources/library'  \
+#>   --install-tests
+#> 
 #> Reloading installed useapitest
 ```
 

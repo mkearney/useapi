@@ -20,7 +20,9 @@ if (dir.exists("/tmp/useapitest")) {
 }
 #remove.packages("useapitest")
 ```
-# useapi
+# useapi <img src="man/figures/logo.png" width="160px" align="right" />
+
+[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 
 📩📨  A workflow for building API wrapper/client packages in R.
 
